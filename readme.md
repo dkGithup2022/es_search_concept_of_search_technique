@@ -9,17 +9,11 @@
 
 2. [검색(Fulltext-Search) 알아보기](#검색fulltext-search-알아보기)
    1. [Fulltext search](#fulltext-search-)
-   
       2. [문서가 유사한지 판단하는 기준](#문서가-유사한지-판단하는-기준)
-      
    1. [문서 유사도 알고리즘](#문서-유사도-알고리즘)
-   
       2. [token](#token) 
-      
       3. [대표적 문서 유사도 알고리즘 : TF-IDF](#대표적-문서-유사도-알고리즘--tf-idf)
-      
       4. [bm25](#bm25)
-
 
 
 3. [Inverted Index](#inverted-index)
@@ -292,7 +286,7 @@ TF란 해당 document 내부에서 언급된 횟수, IDF 란 전체 document 에
 
 식으로 나타내면 아래와 같습니다.
 
-```json
+```
 TF =  {document 내 해당 토큰이 언급된 수} / {document 내 전체 토큰 수}
 IDF = Log( {전체 문서 수} / ( 1+ {토큰을 포함하는 문서 수}))
 TF-IDF = 각 토큰의 TF*IDF 를 누계한 것
@@ -326,7 +320,7 @@ TF-IDF 방법의 일종으로, Elasticsearch 의 default 문서유사도 알고�
 1. 특정 토큰의 가중치를 선형적으로 증가시키지 않고, 그보다 느리게 증가시킵니다.
 2. TF 계산 시 커스터마이징 가능한 파라미터를 추가하여, 가중치 증가 속도를 조절할 수 있습니다.
 
-```json
+```
 BM25 = IDF * (TF * (k+1)) / (TF+K*(1-b+b*(LENG_VAL)))
 LENG_VAL = {해당 doc 길이} / {전체 doc 평균 길이}
 
@@ -808,7 +802,7 @@ ngram 은 유저가 오타를 입력해도 토큰 자체는 매칭이 된다는 
 
 fulltext 서치는 위에서 언급한 inverted index 와 문서 유사도 방식을 이용해 수행할 수 있으나, 실제로는 아래같은 요청도도 있습니다.
 
-```json
+```
 CASE 1: 검색어로 검색하되, 유사도 점수말고 생성일자 기준으로 정렬해주세요 
 
 CASE 2: 특정 칼럼의 평균을 구해주세요. 
