@@ -6,16 +6,13 @@
       1. [예상독자](#예상독자)
       2. [예상독자가 아닌 분](#예상-독자가-아닌-분-)
 
-
 2. [검색(Fulltext-Search) 알아보기](#검색fulltext-search-알아보기)
    1. [Fulltext search](#fulltext-search-)
       1. [문서가 유사한지 판단하는 기준](#문서가-유사한지-판단하는-기준)
-
    2. [문서 유사도 알고리즘](#문서-유사도-알고리즘)
       1. [token](#token)
       2. [대표적 문서 유사도 알고리즘 : TF-IDF](#대표적-문서-유사도-알고리즘--tf-idf)
       3. 3. [bm25](#bm25)
-
 
 3. [Inverted Index](#inverted-index)
     1. [가장 기본적인 개념의 Invereted Index](#가장-기본적인-개념의-invereted-index-)
