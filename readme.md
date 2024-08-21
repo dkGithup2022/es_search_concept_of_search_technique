@@ -7,30 +7,36 @@
       2. [예상독자가 아닌 분](#예상-독자가-아닌-분-)
 
 
-2. [문서 유사도 알고리즘 배경지식](#문서-유사도-알고리즘-배경지식)
-    1. [문서 유사도 알고리즘](#문서-유사도-알고리즘)
-    2. [token](#token) 
-    3. [tf-idf](#tf-idf)
-    4. [bm25](#bm25)
+2. [검색(Fulltext-Search) 알아보기](#검색fulltext-search-알아보기)
+   1. [Fulltext search](#fulltext-search-)
+      2. [문서가 유사한지 판단하는 기준](#문서가-유사한지-판단하는-기준)
+   1. [문서 유사도 알고리즘](#문서-유사도-알고리즘)
+      2. [token](#token) 
+      3. [대표적 문서 유사도 알고리즘 : TF-IDF](#대표적-문서-유사도-알고리즘--tf-idf)
+      4. [bm25](#bm25)
 
 
 
-3. [엘라스틱서치의 Inverted Index](#엘라스틱서치의-inverted-index)
-    1. [간단하게 보는 Inverted Index](#간단하게-보는-inverted-index)
-    2. [빈도가 포함된 Inverted Index](#value가-포함된-inverted-index)
-    3. [trie를 이용해 저장 공간을 절약한 Inverted Index](#trie를-이용해-저장-공간을-절약한-inverted-index)
+3. [Inverted Index](#inverted-index)
+    1. [가장 기본적인 개념의 Invereted Index](#가장-기본적인-개념의-invereted-index-)
+    2. [value 가 포함된 Inverted Index](#value-가-포함된-inverted-index-)
+    3. [Trie 를 이용해 저장 공간을 절약한 Inveted index (elasticsearch)](#trie-를-이용해-저장-공간을-절약한-inveted-index-elasticsearch)
+    4. [그럼 쓰기는 나쁜가요?](#그럼-쓰기는-나쁜가요)
 
 
-4. [엘라스틱서치에서 자주 쓰는 analyzer](#엘라스틱서치에서-자주-쓰는-analyzer)
-    1. [analyzer란?](#analyzer란)
-    2. [형태소 분석 analyzer](#형태소-분석-analyzer)
-    3. [n-gram](#n-gram)
+4. [analyzer](#analyzer-)
+    1. [analyzer란?](#analyzing-란-)
+    2. [형태소 분석 analzyer](#형태소-분석-analzyer)
+    3. [n-gram](#n-gram-)
     
 
-5. [doc_value와 column based 자료형](#doc_value와-column-based-자료형)
-    1. [column based 자료형](#column-based-자료형)
-    2. [doc_value의 필요성](#doc_value의-필요성)
-    3. [doc_value 사용처](#doc_value-사용처)
+5. [doc_value와 column based 자료형](#doc_value-와--column-based-자료형)
+    1. [column based 자료형](#column-based-자료형-)
+    2. [doc_value 사용예시](#doc_value-사용예시-)
+
+
+---
+
 
 # 소개
 
@@ -452,16 +458,17 @@ disk io 의 비용이 inverted index 의 장점을 상쇄해버리기도 애초�
 
 ---
 
-## 엘라스틱서치에서 자주 쓰는 analyzer 
+##  analyzer 
 
-### analyzer 란 ?
+### analyzing 란 ?
 
 analyzing 이란 텍스트를 검색을 위해 전처리 하는 것을 말한다. 크게 두가지 과정으로 나뉘는데 tokenizing 과 filter 이다.
 
-tokenizing 은 텍스트를 쪼게는 것을 칭하고 filter 는 토큰을 변경시키는 것이다. 가령 대소문자를 통일한다던가, 특수문자나 html 태그를 제거하는 등의 행위가 여기에 포함된다.
-
+- Tokenizing : 텍스트를 토큰으로 쪼게는 것
+- Filter : 텍스트를 규칙에 맞게 바꾸는 것 (lowercase, html 제거 등)
 
 tokenizing 이라는 개념을 analyzing 이 포함하고 있으나, 하지만 여러 세미나나 아티클에서 두 단어를 혼용해서 쓰는 경우도 적지는 않다.
+
 
 ### 형태소 분석 analzyer
 
@@ -760,7 +767,7 @@ POST /_analyze
 ```
 
 - 결과 
-```json
+```
 ["토큰","큰이","이란", "란 " .... "알고","고리","리즘","즘에"....]
 ```
 
@@ -771,7 +778,7 @@ ngram 은 유저가 오타를 입력해도 토큰 자체는 매칭이 된다는 
 가령 내가 "알고리즘" 이라고 검색을 하려했는데, "알고리ㅈㅡ" 라고 검색했다고 가정하자.
 그러면 토큰은 
 
-```json
+```
 검색어: ["알고","고리","리ㅈ","ㅈㅡ"]
 ```
 
