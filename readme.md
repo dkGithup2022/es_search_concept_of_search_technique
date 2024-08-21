@@ -9,7 +9,9 @@
 
 2. [검색(Fulltext-Search) 알아보기](#검색fulltext-search-알아보기)
    1. [Fulltext search](#fulltext-search-)
+   
       2. [문서가 유사한지 판단하는 기준](#문서가-유사한지-판단하는-기준)
+      
    1. [문서 유사도 알고리즘](#문서-유사도-알고리즘)
    
       2. [token](#token) 
