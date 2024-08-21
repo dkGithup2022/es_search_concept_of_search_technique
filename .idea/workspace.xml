@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aca0b499-6238-46c1-87c2-66faf0bae699" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticsearch_features_and_usecase.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8버전이전이후검색비교.drawio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/es_세미나.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +62,8 @@
       <updated>1722572424750</updated>
       <workItem from="1722572425956" duration="15788000" />
       <workItem from="1722833133392" duration="9515000" />
+      <workItem from="1722922814174" duration="37007000" />
+      <workItem from="1724136865099" duration="1866000" />
     </task>
     <servers />
   </component>
